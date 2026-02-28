@@ -35,7 +35,7 @@
             perspective: 1000px;
         }
 
-        /* Ambient Background - Cinematic Atmosphere */
+    
         .ambient-bg {
             position: fixed;
             inset: 0;
@@ -46,7 +46,7 @@
             filter: blur(100px);
         }
 
-        /* The Main Stage - Responsive Container */
+        
         .stage {
             width: 100%;
             height: 100%;
@@ -63,7 +63,7 @@
             transition: transform 0.1s ease-out;
         }
 
-        /* Cinematic Hero Section */
+        /* Hero Section */
         .hero-wrap {
             position: relative;
             height: 60%;
@@ -100,7 +100,7 @@
                     #050a08 100%);
         }
 
-        /* Branding Overlay */
+        /* Overlay */
         .top-nav {
             position: absolute;
             top: 2.5rem;
@@ -124,7 +124,7 @@
             filter: brightness(0) invert(1);
         }
 
-        /* Vertical Meta Info */
+        /* Info */
         .side-meta {
             position: absolute;
             right: 1.5rem;
@@ -151,7 +151,7 @@
             letter-spacing: 5px;
         }
 
-        /* Typography Reveal */
+        /* Text Reveal */
         .content-panel {
             flex: 1;
             padding: 0 2.5rem 3rem;
@@ -165,10 +165,10 @@
 
         .name-title {
             font-size: clamp(2.2rem, 7vw, 3rem);
-            /* Adjusted for better scale */
+            
             font-weight: 900;
             line-height: 1.1;
-            /* Slightly increased for readability with long names */
+            
             letter-spacing: -1.5px;
             margin-bottom: 0.85rem;
             color: #fff;
@@ -194,7 +194,7 @@
             background: #ffffff;
         }
 
-        /* Interaction Grid */
+        
         .action-rail {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -227,7 +227,7 @@
             transform: scale(0.9);
         }
 
-        /* Primary Button */
+        /* Button */
         .main-cta {
             background: #ffffff;
             color: #000;
@@ -261,7 +261,7 @@
             text-transform: uppercase;
         }
 
-        /* Responsiveness for different heights */
+        /* Responsiveness */
         @media (max-height: 800px) {
             .hero-wrap {
                 height: 50%;
@@ -333,7 +333,7 @@
                 </a>
             </div>
 
-            <!-- Primary Action with vCard Download -->
+            <!-- vCard -->
             <div class="main-cta" onclick="handleSaveContact()">
                 <i class="fa-solid fa-user-plus text-xs"></i>
                 Save Contact
@@ -347,18 +347,17 @@
 
     <script>
         /**
-         * Generates and triggers a vCard (.vcf) download
+         * vCard (.vcf) download
          */
         function handleSaveContact() {
             const cta = document.querySelector('.main-cta');
             const original = cta.innerHTML;
 
-            // UI Feedback
+    
             cta.style.background = '#3f2305';
             cta.style.color = '#fff';
             cta.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Processing...';
 
-            // Contact Data
             const contact = {
                 firstName: 'Abdullah',
                 lastName: 'Al Mamun',
@@ -368,7 +367,7 @@
                 title: 'Head Of General'
             };
 
-            // Build vCard 3.0 String
+            // Build vCard 3.0
             const vcard = [
                 'BEGIN:VCARD',
                 'VERSION:3.0',
@@ -382,7 +381,7 @@
                 'END:VCARD'
             ].join('\n');
 
-            // Create Blob and Trigger Download
+            // Trigger Download
             try {
                 const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
                 const url = window.URL.createObjectURL(blob);
@@ -411,7 +410,7 @@
             }
         }
 
-        // Parallax Desktop Motion
+        // Parallax Motion
         const stage = document.getElementById('mainStage');
         document.addEventListener('mousemove', (e) => {
             if (window.innerWidth > 1024) {
@@ -436,3 +435,4 @@
 </body>
 
 </html>
+
